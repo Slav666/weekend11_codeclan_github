@@ -18,12 +18,20 @@ public class Repository {
        return this.name;
     }
 
-    public String getDescription(){
+    public String getDescription() {
         return this.description;
     }
 
     public RepoType getRepoType(){
         return this.repoType;
+    }
+
+    public void addCommit(Commit commits){
+        this.commits.add(commits);
+    }
+
+    public int commitCount(){
+        return this.commits.size();
     }
 
     public Commit findCommit(int uniqueId) {
@@ -36,15 +44,17 @@ public class Repository {
         return findCommit;
     }
 
-//    public Commit findCommitByType(String commitType){
-//        Commit foundCommitByType = null;
+//    public Commit findAllCommitByType(CommitType commitType){
+//
+//
+//        Commit findAllCommitByType = null;
 //        for (Commit commits : this.commits) {
 //            if (commits.getCommitType() == commitType)
-//                foundCommitByType = commits;
+//                findAllCommitByType = commits;
 //            }
 //
 //        }
-//        return foundCommitByType;
+//        return findAllCommitByType;
     }
 
 

@@ -8,12 +8,14 @@ public class GitHubAccountTest {
     GitHubAccount gitHubAccount;
     Repository repository;
     Repository repository1;
+    Commit commit;
 
     @Before
     public void before() {
         gitHubAccount = new GitHubAccount("slav666", "Slawomir Dyk", AccountType.FREE );
         repository = new Repository("Slav-homework", "why coding is so hard?", RepoType.PUBLIC);
         repository1 = new Repository("Alex_work", "it's not hard for me", RepoType.PRIVATE);
+        commit = new Commit("nk", CommitType.BUGFIX, 1)
     }
 
     @Test
@@ -36,12 +38,16 @@ public class GitHubAccountTest {
     gitHubAccount.addRepository(repository1);
         assertEquals(2, gitHubAccount.repositoryCount());
     }
-
     @Test
     public void canFindRepositoryByName(){
+        gitHubAccount.addRepository(repository1);
+        assertEquals(1, gitHubAccount.repositoryCount());
         gitHubAccount.findRepositoryByName();
         assertEquals("Alex_work", repository1.getName());
     }
-
+//    @Test
+//    public void canFindRepoWithMostCommit(){
+//        gitHubAccount
+//    }
 
 }

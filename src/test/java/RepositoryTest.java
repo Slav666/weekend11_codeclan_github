@@ -35,15 +35,20 @@ public class RepositoryTest {
 
 
     @Test
-    public void canfindCommit(){
+    public void canFindCommit(){
         assertEquals(1, repository.findCommit(1));
 
     }
 //    @Test
-//    public void canfindCommitByType(){
-//        assertEquals(1, repository.findCommitByType(CommitType.FEATURE));
+//    public void canfindAllCommitByType(){
+//        assertEquals(2, repository.findAllCommitByType(CommitType.FEATURE));
 //
 //    }
+    @Test
+    public void canAddCommit(){
+        repository.addCommit(commit1);
+        assertEquals(1, repository.commitCount());
+    }
 
 
 }

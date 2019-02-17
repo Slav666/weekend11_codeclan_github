@@ -40,7 +40,7 @@ public class GitHubAccount {
         return this.repositories.size();
     }
 
-    public Repository findRepositoryByName(String name) {
+    public Repository findRepositoryByName() {
         Repository findRepositoryByName = null;
         for (Repository repositories : this.repositories) {
             if (repositories.getName() == name) {
@@ -50,7 +50,7 @@ public class GitHubAccount {
         return findRepositoryByName;
     }
 
-    public Repository findAllCommitsCertainType( )
+//    public Repository findAllCommitsCertainType( )
 
 
 }

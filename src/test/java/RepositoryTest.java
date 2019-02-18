@@ -1,6 +1,8 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 
 public class RepositoryTest {
@@ -10,12 +12,16 @@ public class RepositoryTest {
     Commit commit1;
     Commit commit2;
 
+
     @Before
     public void before() {
-        repository = new Repository("codeclan", "homework", RepoType.PRIVATE);
+//        ArrayList<Commit> commit;
+        repository = new Repository("codeclan", "homework", RepoType.PRIVATE,??);
         commit = new Commit("First commit", CommitType.FEATURE, 1);
         commit1 = new Commit("Second commit", CommitType.BUGFIX, 2);
         commit2 = new Commit("Third commit", CommitType.FEATURE, 3);
+
+
     }
 
     @Test
@@ -50,5 +56,12 @@ public class RepositoryTest {
         assertEquals(1, repository.commitCount());
     }
 
-
+    @Test
+    public void canGetAllTypeOfCommits(){
+        repository.addCommit(commit1);
+        repository.addCommit(commit2);
+        repository.addCommit(commit);
+        ArrayList<Commit> commitsOfType = repository.getAllCommitsOfType(CommitType.BUGFIX);
+        assertEquals(1, commitsOfType.size());
+    }
 }

@@ -7,30 +7,31 @@ public class Repository {
     private RepoType repoType;
     private ArrayList<Commit> commits;
 
-    public Repository(String name, String description, RepoType repoType){
+    public Repository(String name, String description, RepoType repoType, ArrayList<Commit> commits) {
         this.name = name;
         this.description = description;
         this.repoType = repoType;
-        this.commits = new ArrayList<>();
+        this.commits = commits;
+//        this.commits = new ArrayList<>();
     }
 
-    public String getName(){
-       return this.name;
+    public String getName() {
+        return this.name;
     }
 
     public String getDescription() {
         return this.description;
     }
 
-    public RepoType getRepoType(){
+    public RepoType getRepoType() {
         return this.repoType;
     }
 
-    public void addCommit(Commit commits){
+    public void addCommit(Commit commits) {
         this.commits.add(commits);
     }
 
-    public int commitCount(){
+    public int commitCount() {
         return this.commits.size();
     }
 
@@ -44,20 +45,18 @@ public class Repository {
         return findCommit;
     }
 
-//    public Commit findAllCommitByType(CommitType commitType){
-//
-//
-//        Commit findAllCommitByType = null;
-//        for (Commit commits : this.commits) {
-//            if (commits.getCommitType() == commitType)
-//                findAllCommitByType = commits;
-//            }
-//
-//        }
-//        return findAllCommitByType;
+
+
+    public ArrayList<Commit> getAllCommitsOfType(CommitType commitType) {
+        ArrayList<Commit> commitOfType = new ArrayList<>();
+        for (Commit commits : this.commits) {
+            if (commits.getCommitType() == commitType) {
+                commitOfType.add(commits);
+            }
+        }
+        return commitOfType;
     }
 
 
-
-
+}
 

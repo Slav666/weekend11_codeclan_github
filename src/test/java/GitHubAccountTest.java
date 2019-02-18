@@ -13,8 +13,8 @@ public class GitHubAccountTest {
     @Before
     public void before() {
         gitHubAccount = new GitHubAccount("slav666", "Slawomir Dyk", AccountType.FREE );
-        repository = new Repository("Slav-homework", "why coding is so hard?", RepoType.PUBLIC);
-        repository1 = new Repository("Alex_work", "it's not hard for me", RepoType.PRIVATE);
+        repository = new Repository("Slav-homework", "why coding is so hard?", RepoType.PUBLIC, );
+        repository1 = new Repository("Alex_work", "it's not hard for me", RepoType.PRIVATE, );
         commit = new Commit("nk", CommitType.BUGFIX, 1)
     }
 

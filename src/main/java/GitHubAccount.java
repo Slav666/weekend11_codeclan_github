@@ -12,7 +12,7 @@ public class GitHubAccount {
     private ArrayList<Repository> repositories;
     private AccountType accountType;
 
-    public GitHubAccount (String userName, String name, AccountType accountType){
+    public GitHubAccount (String userName, String name, AccountType accountType ){
 
         this.userName = userName;
         this.name = name;
@@ -31,6 +31,7 @@ public class GitHubAccount {
     public AccountType getAccountType(){
         return this.accountType;
     }
+
 
     public void addRepository( Repository repositories){
         this.repositories.add(repositories);
